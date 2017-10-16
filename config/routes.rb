@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
+  get 'say/edit'
+
+  get 'say/delete'
+
+  get 'say/show'
+
+  get 'say/index'
+
+  resources :courses
+  resources :enrolls
+  resources :students
   resources :widgets
+
+  match ':controller(/:action(/:id))', :via => :get
+  match ':controller(/:action(/:id))', :via => :post
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
